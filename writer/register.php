@@ -10,7 +10,7 @@ switch ($request_method) {
     // Insert User
     $writer->setEmail("".$data->email."");
     $writer->setPassword("".$data->password."");
-    if(email_exist() == true){
+    if($writer->email_exist() == true){
       $response =array('response'=>array('status' => false, 'message' => 'Email already exist'));
           echo json_encode($response);
           header('Content-Type: application/json');
